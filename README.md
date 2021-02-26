@@ -1,8 +1,7 @@
 # 쇼핑몰 옵션, 구매, 장바구니등
 
 code
-'`'
-  <input type="hidden" class="opt_hd" value='{
+    <input type="hidden" class="opt_hd" value='{
   "gid":"16109355565481",
   "memCheck":false,
   "optGroup":true,
@@ -34,7 +33,7 @@ code
     ]
   }
 }'>
-'`'
+
 
 
 
