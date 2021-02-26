@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Document</title>
+<link rel="stylesheet" href="/css/res_layout.css?v=201013" media="all">
+<script src="js/plugin/jquery-1.12.4.min.js"></script>
+<script src="js/common.js"></script>
+<style>
+.opt_lng_btn{display: inline-block;width: 20px;height: 20px;background-color: #000;}
+.opt_del_btn{display: inline-block;width: 20px;height: 20px;background-color: #f00;}
+
+.lng_btn{display: inline-block;width: 20px;height: 20px;background-color: #000;}
+
+#wrap{padding: 20px;min-width: 100%;}
+
+h1{font-size: 24px;font-weight: bold;}
+h2{font-size: 20px;font-weight: bold;}
+
+dt{font-weight: bold;}
+
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>쇼핑몰 옵션</h1>
+  <h2>옵션종류</h2>
+  <ul>
+    <li><a href="/">세트 필수 옵션</a></li>
+    <li><a href="/single">단독 필수 옵션</a></li>
+    <li><a href="/add">추가 옵션</a></li>
+  </ul>
+    <div id="content">
+    
+    
+    
+    
+    
+<dl class="mb50">
+  <dt>세트 필수 옵션</dt>
+  <dd>필수 옵션 전체 선택시 옵션 코드 생성</dd>
+  <dd>옵션 선택시 가격은 기본가+선택옵션 가격</dd>
+  <dd>ex) 운동화 구매시 색상, 사이즈</dd>
+</dl>
+<p>optGroup : true</p>
+<input type="hidden" class="opt_hd" value='{
+  "gid":"16109355565481",
+  "memCheck":false,
+  "optGroup":true,
+  "initPrice":8500,
+  "opt":{
+    "req":[
+      {
+        "name": "규격",
+        "price":[0,2420,2640,3080,3520,3850,4620]
+      },
+      {
+        "name": "페인팅여부",
+        "price":[0,0,550]
+      },
+      {
+        "name": "페인팅여부",
+        "price":[0,0,550]
+      }
+    ],
+    "add":[
+      {
+        "name": "파이프캡",
+        "price":[0,880,880,880]
+      },
+      {
+        "name": "파이프캡",
+        "price":[0,880,880,880]
+      }
+    ]
+  }
+}'>
+
+
+
+
+<form action="" class="ord_form">
+  <div class="opt_wrap">
+    <p class="p">
+      <select class="option_sel js_opt_sel req dotum c6 fz12" data-num="0">
+    	<option value="">필수선택</option>
+  		<option value="규격 : 다웰바 Ø19*400||+||2420||0||0">다웰바 Ø19*400 (2,420원)</option>
+  		<option value="규격 : 다웰바 Ø19*500||+||2640||0||0">다웰바 Ø19*500 (2,640원)</option>
+  		<option value="규격 : 다웰바 Ø19*600||+||3080||0||0">다웰바 Ø19*600 (3,080원)</option>
+  		<option value="규격 : 다웰바 Ø19*700||+||3520||0||">다웰바 Ø19*700 (3,520원)</option>
+  		<option value="규격 : 다웰바 Ø19*800||+||3850||0||">다웰바 Ø19*800 (3,850원)</option>
+  		<option value="규격 : 다웰바 Ø19*1000||+||4620||0||">다웰바 Ø19*1000 (4,620원)</option>
+  	</select>
+    </p>
+    <p class="p">
+      <select class="option_sel js_opt_sel req dotum c6 fz12" data-num="1">
+        <option value="">필수선택</option>
+      	<option value="페인팅여부 : 비도색||+||0||0||0">비도색</option>
+      	<option value="페인팅여부 : 녹막이페인트 1/2||+||550||0||0">녹막이페인트 1/2 (550원)</option>
+      </select>
+    </p>
+    <p class="p">
+      <select class="option_sel js_opt_sel dotum c6 fz12" data-num="0">
+      <option value="">추가선택</option>
+      	<option value="파이프캡 : 25Ø x 300mm||+||880||0||0">25Ø x 300mm (+880)</option>
+      	<option value="파이프캡 : 25Ø x 400mm||+||880||0||">25Ø x 400mm (+880)</option>
+      	<option value="파이프캡 : 25Ø x 500mm||+||880||0||">25Ø x 500mm (+880)</option>
+      </select>
+    </p>
+    <p>
+      <select class="option_sel js_opt_sel dotum c6 fz12" data-num="1">
+      <option value="">추가선택</option>
+      	<option value="파이프캡 : 25Ø x 300mm||+||880||0||0">25Ø x 300mm (+880)</option>
+      	<option value="파이프캡 : 25Ø x 400mm||+||880||0||">25Ø x 400mm (+880)</option>
+      	<option value="파이프캡 : 25Ø x 500mm||+||880||0||">25Ø x 500mm (+880)</option>
+      </select>
+    </p>
+  </div>
+  <div class="pb100">
+    <ul class="append_opt"></ul>
+  </div>
+  <button type="submit" class="ord_submit_btn">주문</button>
+  <button type="button" class="ord_cart_btn">장바구니</button>
+</form>
+
+
+
+
+<div class="pb100">
+  <p>form 밖에 생성</p>
+  <ul class="append_opt"></ul>
+</div>
+<p class="mt50"><span class="total_price"></span>원</p>
+
+<p>클릭시 form 내용 전송</p>
+<button type="submit" class="fake_submit_btn">주문</button>
+
+
+
+
+
+
+</div>
+</div>
+<script src="/shop_opt_class_v1.js"></script>
+<script src="/shop_opt_v1.js"></script>
+<script>
+
+</script>
+</body>
+</html>
