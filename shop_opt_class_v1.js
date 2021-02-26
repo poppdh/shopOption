@@ -269,15 +269,16 @@
 
 
       submitInner(e, type){
-        if(type === 'ord'){
-          this.ordCallback(e, $(this.form));
-        }else if(type === 'cart'){
-          this.cartCallback(e,$(this.form));
-        }else if(type === 'etc'){
-          this.etcCallback(e,$(this.form), type);
+        if(this.hdVal.memOrder === true){
+          if(type === 'ord'){
+            this.ordCallback(e, $(this.form), this.hdVal.ordUrl);
+          }else if(type === 'cart'){
+            this.cartCallback(e,$(this.form), this.hdVal.cartUrl);
+          }else{
+            this.etcCallback(e,$(this.form), type);
+          }
         }else{
-          //$(this.form).attr('action', url);
-
+          //$(location).attr('href', this.hdVal.ordUrl);
         }
       }
 
@@ -328,9 +329,9 @@
     });
 
     // 옵션 수량 입력
-    body.on('keyup', o.lnginp, function(){
+    body.on('keyup', o.lnginp, function(e){
       const $this = $(this);
-      o.optLngInp($this);
+      o.ordlngInp($this);
     });
 
 
@@ -341,15 +342,23 @@
     });
 
     // 구매 수량 입력
-    body.on('keyup', o.orgLngInp, function(){
+    body.on('keyup', o.orgLngInp, function(e){
       const $this = $(this);
       o.ordlngInp($this);
     });
 
+    // Enter submit 방지
+    body.on('keydown', o.lnginp+', '+ o.orgLngInp, function(e){
+      if(e.keyCode === 13){
+        e.preventDefault();
+      }else{}
+    });
+
+
 
 
     // 구매
-    body.on('submit', o.form, function(e){
+    body.on('click', o.submitBtn, function(e){
       o.submit(e, 'ord');
     });
 
@@ -366,8 +375,9 @@
 
     // form 밖에서 submit
     body.on('click', o.fakeSubmit, function(e){
-      $(o.form).submit();
+      o.submit(e, 'ord');
     });
+
 
 
 
