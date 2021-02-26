@@ -36,6 +36,15 @@ code
 }'>
 ```
 
+* gid : 상품코드
+* memCheck : 회원확인(string)
+* optGroup : 세트 필수 옵션 true, 단일 필수 옵션 false(bool)
+* initPrice : 기본가(number)
+* opt : 옵션(obj)
+* req : 필수옵션 리스트 비어있으면 필수옵션 체크안함(arr)
+* add : 추가옵션 리스트
+*   name : 옵션 타이틀(string)
+*   price : 옵션가 리스트(arr)
 
 
 옵션 종류
