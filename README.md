@@ -37,7 +37,7 @@ code
 ```
 
 * gid : 상품코드
-* memCheck : 회원확인(string)
+* memOrder : 비회원주문 가능 여부()
 * optGroup : 세트 필수 옵션 true, 단일 필수 옵션 false(bool)
 * initPrice : 기본가(number)
 * opt : 옵션(obj)
