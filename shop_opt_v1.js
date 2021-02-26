@@ -82,21 +82,23 @@ $(function(){
 
 
 
-    ordCallback: function(e, form){
+    ordCallback: function(e, form, url){
       // 구매하기 callback
+      //form.submit(); 으로 데이터 전송가능
 
-      form.attr('action', '/order');
+      form.attr('action', url);
       console.log('submit');
     },
 
-    cartCallback: function(e, form){
+    cartCallback: function(e, form, url){
       // 장바구니 callback
+      //form.submit(); 으로 데이터 전송가능
 
       let data = form.serialize();
       let dataJson = null;
       $.ajax({
         type: 'post',
-        url: '/cart',
+        url: url,
         data: data,
         success: function(data){
           try{
@@ -116,6 +118,8 @@ $(function(){
     etcCallback: function(e, form, type){
       // 기타 callback
       // type으로 버튼 형식 확인 후 분할 사용 가능
+      //form.submit(); 으로 데이터 전송가능
+
       console.log(type,'기타');
     }
 
